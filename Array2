@@ -1,0 +1,46 @@
+let Employee = {
+    id : '45',
+    name : 'mani',
+    age : 20,
+    contactnumber : 3456,
+    working(){
+        console.log("function of employee");
+    },
+    sleeping: function(){
+        console.log("sleeping function");
+    }
+}
+console.log("id: "+Employee.id);
+console.log("namw: "+Employee.name);
+console.log("age: "+Employee.age);
+console.log("contactnumber: "+Employee.contactnumber);
+Employee.working();
+Employee.sleeping();function areAnagram(str1,str2)
+{
+    let n1 = str1.length;
+    let n2 = str2.length;
+   
+    if (n1 != n2)
+        return false;
+   
+    // Sort both strings
+    str1.sort();
+    str2.sort()
+   
+    // Compare sorted strings
+    for (let i = 0; i < n1; i++)
+        if (str1[i] != str2[i])
+            return false;
+   
+    return true;
+}
+     
+let str1=['t', 'e', 's', 't'];
+let str2=['t', 't', 'e', 'w'];
+     
+if (areAnagram(str1, str2))
+    console.log("anagram");
+else
+    console.log("not anagram");
+
+
