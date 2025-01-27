@@ -1,7 +1,0 @@
-input = promt("Enter the number to check");
-if(input % 2==0){
-console.log("Enter number is Even");
-}
-else{
-console.log("Enter number is Odd");
-}
