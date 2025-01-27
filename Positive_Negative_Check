@@ -1,7 +1,0 @@
-input = promt("Enter the number");
-if(input > 0){
-console.log("Number is Positive");
-}
-else{
-console.log("Number is Negative");
-}
