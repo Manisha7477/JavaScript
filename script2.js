@@ -1,3 +1,3 @@
 var a = require("./script");
 
-console.log(a);
+console.log("value",a);
