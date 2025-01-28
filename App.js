@@ -15,6 +15,10 @@ app.get('/about', function(req, res){
     res.send("Something about me!")
 })
 
+//dynamic routing
+app.get('/about/:username', function(req, res){
+  res.send("Something about username!")
+})
 //in every page ill show this when use *, called universal route
 // app.get('*', function(req, res){
 //     res.send("Something star me!")
