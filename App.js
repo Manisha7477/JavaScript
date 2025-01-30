@@ -36,5 +36,15 @@ app.get("/author/:username/:age", function(req, res){
   res.send("username:" + req.params.username + " " + " age:" + req.params.age )
 })
 
+// for get api
+// app.get('/check', function(req, res){
+//   res.send("Form submitted successfully!");
+// });
+
+
+// for post api
+app.post('/check', function(req, res){
+  res.send("Form submitted successfully!");
+});
 
 app.listen(3000)
