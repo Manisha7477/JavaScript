@@ -1,19 +1,26 @@
 const express = require('express')
 const app = express()
 
+//ejs
+app.set('view engine', 'ejs');
+
+app.get('/', function(req, res){
+  res.render("index")
+})
+
 //middleware
 // app.use(function(req, res, next){
 //   console.log("Hey Hello!");
 //   next(); //to go next function 
 // })
 
-app.get('/', function (req, res) {
-  res.send('Something about main page')
-})
+// app.get('/', function (req, res) {
+//   res.send('Something about main page')
+// })
 
-app.get('/about', function(req, res){
-    res.send("Something about me!")
-})
+// app.get('/about', function(req, res){
+//     res.send("Something about me!")
+// })
 
 //in every page will show this when use *, called universal route
 // app.get('*', function(req, res){
