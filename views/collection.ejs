@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="bg-blue-200"> <!-- Apply light blue background to the entire page -->
+    <main class="w-full h-full font-[Helvetica] pt-10"> <!-- Set main to fill the height -->
+        <nav class="flex items-center px-2 py-1 fixed top-0 w-full bg-blue-300 shadow-md">
+            <h3 class="tracking-tight pl-0 text-sm">Collection Book</h3>
+            <div class="navlink flex gap-5 ml-auto">
+                <a class="text-sm tracking-tight hover:text-red-500 transition duration-300" href="/">Home</a>
+                <a class="text-sm tracking-tight hover:text-red-500 transition duration-300" href="/create">Create</a>
+            </div>
+        </nav>   
+        <div class="px-0 collection">
+            <h3 class=" font-medium mb-2 mt-5 tracking-tight">Collection of <span class="text-blue-500">
+                <%= filename.split(".")[0] %></span></h3>
+            <p class="font-medium text-xl mb-5"><%= filedata %></p>
+            <a class="text-zinc-500 underline" href="/edit/<%= filename %>">Edit this collection</a>
+        </div>
+    </main>
+</body>
+</html>
