@@ -126,16 +126,19 @@ app.get("/", function(req, res){
 // })
 
 //READ document in db
-app.get('/read', async function(req, res, next){
+// app.get('/read', async function(req, res, next){
+//   //find one - read one
+//   // let user = await userModel.findOne({name:"mani"});
+//   //find all - find
+//   let users = await userModel.find();
+//   // debuglog("read");
+//   // res.send(user);
+//   res.send(users);
+// })
 
-  //find one - read one
-  // let user = await userModel.findOne({name:"mani"});
-
-  //find all - find
-  let users = await userModel.find();
-
-  // debuglog("read");
-  // res.send(user);
-  res.send(users);
-})
+//UPDATE
+app.get('/update', async function(req, res, next){
+    let user = await userModel.findOneAndUpdate({name:"mani"}, {name: "manu"}, {new: true});
+    res.send(user);
+  })
 app.listen(3000)
