@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const debuglog = require('debug');
+const debuglog = require('debug')("development");
 
 mongoose.connect("mongodb+srv://testusername:OuHEn0XsDtTrUUIl@cluster0.b016r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 

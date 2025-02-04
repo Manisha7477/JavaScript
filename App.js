@@ -99,16 +99,29 @@ const app = express()
 
 
 //DATABASE CONNECTION
-// const mongooseconnection = require('./config/mongoose');
-const mongoose = require("mongoose");
-// const userModel = require("./models/user");
-
-mongoose.connect("mongodb+srv://testusername:OuHEn0XsDtTrUUIl@cluster0.b016r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-).then(function () {
-    console.log("Connected to database")})
+// mongoose.connect("mongodb+srv://testusername:OuHEn0XsDtTrUUIl@cluster0.b016r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+// ).then(function () {
+//     console.log("Connected to database")})
+// const mongoose = require("mongoose");
+const mongooseconnection = require('./config/mongoose');
+const userModel = require("./models/user");
+const debuglog = require('debug')("development:App");
 
 
 app.get("/", function(req, res){
   res.send("hey");
+})
+
+app.get("/create",  async function(req, res, next){
+  let createdUser = await userModel.create({
+    username: "manisha",
+    name:"mani",
+    email:"manisha@gmail.com",
+    password:"pass"
+  })
+
+  debuglog("user created");
+  res.send(createdUser);
+  
 })
 app.listen(3000)
