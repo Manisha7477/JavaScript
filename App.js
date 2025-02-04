@@ -81,20 +81,34 @@ const app = express()
 
 //postman api develope & test
 
-var data =[1,2,3,4,5]
+// var data =[1,2,3,4,5]
+// app.get("/", function(req, res){
+//   res.send("hey");
+// })
+
+// app.get("/data", function(req, res){
+//   res.send(data)
+// })
+
+// app.post("/data/:number", function(req, res){
+//   // typeof(req.params.number);
+
+//   data.push(parseInt(req.params.number))
+//   res.send(data)
+// })
+
+
+//DATABASE CONNECTION
+// const mongooseconnection = require('./config/mongoose');
+const mongoose = require("mongoose");
+// const userModel = require("./models/user");
+
+mongoose.connect("mongodb+srv://testusername:OuHEn0XsDtTrUUIl@cluster0.b016r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+).then(function () {
+    console.log("Connected to database")})
+
+
 app.get("/", function(req, res){
   res.send("hey");
 })
-
-app.get("/data", function(req, res){
-  res.send(data)
-})
-
-app.post("/data/:number", function(req, res){
-  // typeof(req.params.number);
-
-  data.push(parseInt(req.params.number))
-  res.send(data)
-})
-
 app.listen(3000)
