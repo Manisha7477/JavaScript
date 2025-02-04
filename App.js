@@ -112,16 +112,30 @@ app.get("/", function(req, res){
   res.send("hey");
 })
 
-app.get("/create",  async function(req, res, next){
-  let createdUser = await userModel.create({
-    username: "manisha",
-    name:"mani",
-    email:"manisha@gmail.com",
-    password:"pass"
-  })
+//CREATE new document in DB
 
-  debuglog("user created");
-  res.send(createdUser);
-  
+// app.get("/create",  async function(req, res, next){
+//   let createdUser = await userModel.create({
+//     username: "manisha",
+//     name:"mani",
+//     email:"manisha@gmail.com",
+//     password:"pass"
+//   })
+//   debuglog("user created");
+//   res.send(createdUser); 
+// })
+
+//READ document in db
+app.get('/read', async function(req, res, next){
+
+  //find one - read one
+  // let user = await userModel.findOne({name:"mani"});
+
+  //find all - find
+  let users = await userModel.find();
+
+  // debuglog("read");
+  // res.send(user);
+  res.send(users);
 })
 app.listen(3000)
