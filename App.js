@@ -137,8 +137,15 @@ app.get("/", function(req, res){
 // })
 
 //UPDATE
-app.get('/update', async function(req, res, next){
-    let user = await userModel.findOneAndUpdate({name:"mani"}, {name: "manu"}, {new: true});
-    res.send(user);
-  })
+// app.get('/update', async function(req, res, next){
+//     let user = await userModel.findOneAndUpdate({name:"mani"}, {name: "manu"}, {new: true});
+//     res.send(user);
+//   })
+
+//DELETE
+app.get('/delete', async function(req, res) {
+  let user = await userModel.findOneAndDelete({name: 'manu'});
+  console.log(user);
+  res.send(user);
+})
 app.listen(3000)
