@@ -114,16 +114,16 @@ app.get("/", function(req, res){
 
 //CREATE new document in DB
 
-// app.get("/create",  async function(req, res, next){
-//   let createdUser = await userModel.create({
-//     username: "manisha",
-//     name:"mani",
-//     email:"manisha@gmail.com",
-//     password:"pass"
-//   })
-//   debuglog("user created");
-//   res.send(createdUser); 
-// })
+app.get("/create",  async function(req, res, next){
+  let createdUser = await userModel.create({
+    username: "manisha",
+    name:"mani",
+    email:"manisha@gmail.com",
+    password:"pass"
+  })
+  debuglog("user created");
+  res.send(createdUser); 
+})
 
 //READ document in db
 // app.get('/read', async function(req, res, next){
@@ -143,9 +143,18 @@ app.get("/", function(req, res){
 //   })
 
 //DELETE
-app.get('/delete', async function(req, res) {
-  let user = await userModel.findOneAndDelete({name: 'manu'});
-  console.log(user);
-  res.send(user);
+// app.get('/delete', async function(req, res) {
+//   let user = await userModel.findOneAndDelete({name: 'manu'});
+//   console.log(user);
+//   res.send(user);
+// })
+
+
+//postman
+// app.post("/create", function(req, res, next){
+//   res.send(req.body);
+// })
+app.listen(3000, () => {
+  console.log("Server is running");
+  
 })
-app.listen(3000)
